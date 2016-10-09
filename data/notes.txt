@@ -1,0 +1,7 @@
+# Congressional Districts Relationship Files (Nation-based)
+https://www.census.gov/geo/maps-data/data/cd_national.html
+http://www2.census.gov/geo/relfiles/cdsld13/natl/natl_zccd_delim.txt
+
+# State codes
+https://www.census.gov/geo/reference/ansi_statetables.html
+http://www2.census.gov/geo/docs/reference/state.txt
