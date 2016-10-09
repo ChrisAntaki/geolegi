@@ -2,3 +2,5 @@ runtime: nodejs
 vm: true
 skip_files:
  - ^node_modules$
+env_variables:
+ CLOUDSDK_APP_USE_GSUTIL: 1
