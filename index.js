@@ -53,12 +53,6 @@ getCSV('legislators', ',').forEach(legislator => {
 
 mkdirp.sync('json');
 
-// statesById.forEach(state => {
-//     const code = state.abbrev;
-//     const senators = state.senators || [];
-//     fs.writeFileSync(`json/${code}.json`, beautify(JSON.stringify(senators)));
-// });
-
 getCSV('zips', ',').forEach(zip => {
     const code = +zip.ZCTA;
     const district = +zip['Congressional District'];
