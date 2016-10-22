@@ -5,7 +5,7 @@ const path = require('path');
 const request = require('request-promise');
 
 
-let csv = 'title,firstname,lastname,party,state,district,in_office,phone,bioguide_id\n';
+let csv = 'title,firstname,lastname,party,state,district,in_office,phone,bioguide_id,senate_class\n';
 
 Promise.resolve()
 
@@ -31,6 +31,7 @@ Promise.resolve()
             1,
             $member.find('phone').text().replace(/[()]/g, '').replace(/ /g, '-'),
             $member.find('bioguideID').text(),
+            '',
         ].join(',') + '\n';
     });
 })
@@ -53,6 +54,7 @@ Promise.resolve()
             1,
             $member.find('phone').text().replace(/[()]/g, '').replace(/ /g, '-'),
             $member.find('bioguide_id').text(),
+            $member.find('class').text(),
         ].join(',') + '\n';
     });
 })
