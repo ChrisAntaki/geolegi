@@ -2,89 +2,93 @@ const $ = require('cheerio');
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
-
-function parseXML(filename) {
-    const buffer = fs.readFileSync(
-        path.join(
-            __dirname,
-            'xml',
-            filename
-        ),
-        'utf-8'
-    );
-    const xml = $(buffer, {
-        normalizeWhitespace: true,
-        xmlMode: true,
-    });
-    return xml;
-}
+const request = require('request-promise');
 
 
 let csv = 'title,firstname,middlename,lastname,name_suffix,nickname,party,state,district,in_office,gender,phone,fax,website,webform,congress_office,bioguide_id,votesmart_id,fec_id,govtrack_id,crp_id,twitter_id,congresspedia_url,youtube_url,facebook_id,official_rss,senate_class,birthdate,oc_email\n';
 
-console.log(chalk.green('Parsing Reps'));
-const house = parseXML('house.xml');
-house.find('members member').each((i, member) => {
-    const $member = $(member);
+Promise.resolve()
 
-    if ($member.find('predecessor-info').length > 0) {
-        return;
-    }
+// House of Representatives
+.then(() => request('http://clerk.house.gov/xml/lists/MemberData.xml'))
+.then(data => {
+    console.log(chalk.green('House of Representatives'));
+    const house = parseXML(data);
+    house.find('members member').each((i, member) => {
+        const $member = $(member);
 
-    csv += [
-        'Rep',
-        $member.find('firstname').text(),
-        '',
-        $member.find('lastname').text(),
-        '',
-        '',
-        $member.find('party').text(),
-        $member.find('statedistrict').text().slice(0, 2),
-        +$member.find('statedistrict').text().slice(2),
-        1,
-        '',
-        $member.find('phone').text().replace(/[()]/g, '').replace(/ /g, '-'),
-        '',
-        '',
-        '',
-        '',
-        $member.find('bioguideID').text(),
-    ].join(',') + '\n';
-});
+        if ($member.find('predecessor-info').length > 0) {
+            return;
+        }
 
-console.log(chalk.green('Parsing Senators'));
-const senators = parseXML('senators.xml');
-senators.find('member').each((i, member) => {
-    const $member = $(member);
+        csv += [
+            'Rep',
+            $member.find('firstname').text(),
+            '',
+            $member.find('lastname').text(),
+            '',
+            '',
+            $member.find('party').text(),
+            $member.find('statedistrict').text().slice(0, 2),
+            +$member.find('statedistrict').text().slice(2),
+            1,
+            '',
+            $member.find('phone').text().replace(/[()]/g, '').replace(/ /g, '-'),
+            '',
+            '',
+            '',
+            '',
+            $member.find('bioguideID').text(),
+        ].join(',') + '\n';
+    });
+})
 
-    if ($member.find('predecessor-info').length > 0) {
-        return;
-    }
+// Senate
+.then(() => request('http://www.senate.gov/general/contact_information/senators_cfm.xml'))
+.then(data => {
+    console.log(chalk.green('Senate'));
+    const senators = parseXML(data);
+    senators.find('member').each((i, member) => {
+        const $member = $(member);
 
-    csv += [
-        'Sen',
-        $member.find('first_name').text().split(',')[0],
-        '',
-        $member.find('last_name').text(),
-        '',
-        '',
-        $member.find('party').text(),
-        $member.find('state').text(),
-        $member.find('class').text(),
-        1,
-        '',
-        $member.find('phone').text().replace(/[()]/g, '').replace(/ /g, '-'),
-        '',
-        '',
-        '',
-        '',
-        $member.find('bioguide_id').text(),
-    ].join(',') + '\n';
-});
+        csv += [
+            'Sen',
+            $member.find('first_name').text().split(',')[0],
+            '',
+            $member.find('last_name').text(),
+            '',
+            '',
+            $member.find('party').text(),
+            $member.find('state').text(),
+            $member.find('class').text(),
+            1,
+            '',
+            $member.find('phone').text().replace(/[()]/g, '').replace(/ /g, '-'),
+            '',
+            '',
+            '',
+            '',
+            $member.find('bioguide_id').text(),
+        ].join(',') + '\n';
+    });
+})
 
-console.log(chalk.yellow('Saving file'));
-fs.writeFileSync(path.join(
-    __dirname,
-    'csv',
-    'legislators.csv'
-), csv);
+// Saving
+.then(() => {
+    console.log(chalk.yellow('Saving'));
+    fs.writeFileSync(path.join(
+        __dirname,
+        'csv',
+        'legislators.csv'
+    ), csv);
+})
+.catch(console.error);
+
+
+function parseXML(data) {
+    return $(data, {
+        normalizeWhitespace: true,
+        xmlMode: true,
+        decodeEntities: true,
+    });
+}
