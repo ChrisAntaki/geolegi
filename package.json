@@ -3,16 +3,12 @@
     "node": "6.7.0"
   },
   "scripts": {
-    "start": "node create-zip-json-files.js",
     "legislators": "node create-legislators-csv.js",
     "monitor": "nodemon create-zip-json-files.js",
     "test": "mocha -w"
   },
   "dependencies": {
-    "bluebird": "^3.4.6",
     "chalk": "^1.1.3",
-    "cheerio": "^0.22.0",
-    "csv-parse": "^1.1.7",
-    "js-beautify": "^1.6.4"
+    "cheerio": "^0.22.0"
   }
 }

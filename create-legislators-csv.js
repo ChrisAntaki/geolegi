@@ -1,4 +1,5 @@
 const $ = require('cheerio');
+const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 
@@ -21,6 +22,7 @@ function parseXML(filename) {
 
 let csv = 'title,firstname,middlename,lastname,name_suffix,nickname,party,state,district,in_office,gender,phone,fax,website,webform,congress_office,bioguide_id,votesmart_id,fec_id,govtrack_id,crp_id,twitter_id,congresspedia_url,youtube_url,facebook_id,official_rss,senate_class,birthdate,oc_email\n';
 
+console.log(chalk.green('Parsing Reps'));
 const house = parseXML('house.xml');
 house.find('members member').each((i, member) => {
     const $member = $(member);
@@ -50,6 +52,7 @@ house.find('members member').each((i, member) => {
     ].join(',') + '\n';
 });
 
+console.log(chalk.green('Parsing Senators'));
 const senators = parseXML('senators.xml');
 senators.find('member').each((i, member) => {
     const $member = $(member);
@@ -79,6 +82,7 @@ senators.find('member').each((i, member) => {
     ].join(',') + '\n';
 });
 
+console.log(chalk.yellow('Saving file'));
 fs.writeFileSync(path.join(
     __dirname,
     'csv',
