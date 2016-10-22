@@ -71,8 +71,8 @@ Promise.resolve()
 
 function parseXML(data) {
     return $(data, {
+        decodeEntities: true,
         normalizeWhitespace: true,
         xmlMode: true,
-        decodeEntities: true,
     });
 }
