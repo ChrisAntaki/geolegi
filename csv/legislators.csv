@@ -108,8 +108,8 @@ Rep,Thomas,Rooney,R,FL,17,1,202-225-5792,R000583,
 Rep,Brian,Mast,R,FL,18,1,202-225-3026,M001199,
 Rep,Francis,Rooney,R,FL,19,1,202-225-2536,R000607,
 Rep,Alcee,Hastings,D,FL,20,1,202-225-1313,H000324,
-Rep,Lois,Frankel,D,FL,21,1,202-225-3001,F000462,
-Rep,Theodore,Deutch,D,FL,22,1,202-225-9890,D000610,
+Rep,Lois,Frankel,D,FL,21,1,202-225-9890,F000462,
+Rep,Theodore,Deutch,D,FL,22,1,202-225-3001,D000610,
 Rep,Debbie,Wasserman Schultz,D,FL,23,1,202-225-7931,W000797,
 Rep,Frederica,Wilson,D,FL,24,1,202-225-4506,W000808,
 Rep,Mario,Diaz-Balart,R,FL,25,1,202-225-4211,D000600,
@@ -527,7 +527,7 @@ Sen,Jeff,Sessions,R,AL,Class II,1,202-224-4124,S001141,Class II
 Sen,Jeanne,Shaheen,D,NH,Class II,1,202-224-2841,S001181,Class II
 Sen,Richard C.,Shelby,R,AL,Class III,1,202-224-5744,S000320,Class III
 Sen,Debbie,Stabenow,D,MI,Class I,1,202-224-4822,S000770,Class I
-Sen,Daniel,Sullivan,R,AK,Class II,1,202-224-3004,S001198,Class II
+Sen,Dan,Sullivan,R,AK,Class II,1,202-224-3004,S001198,Class II
 Sen,Jon,Tester,D,MT,Class I,1,202-224-2644,T000464,Class I
 Sen,John,Thune,R,SD,Class III,1,202-224-2321,T000250,Class III
 Sen,Thom,Tillis,R,NC,Class II,1,202-224-6342,T000476,Class II
