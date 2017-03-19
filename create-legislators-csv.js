@@ -9,10 +9,13 @@ let csv = 'title,firstname,lastname,party,state,district,in_office,phone,bioguid
 
 Promise.resolve()
 
+.then(() => console.log('## Geolegi ##'))
+.then(() => console.log('Downloading and parsing XML from Congress...'))
+
 // House of Representatives
 .then(() => request('http://clerk.house.gov/xml/lists/MemberData.xml'))
 .then(data => {
-    console.log(chalk.green('House of Representatives'));
+    console.log(chalk.green('- House of Representatives'));
     const house = parseXML(data);
     house.find('members member').each((i, member) => {
         const $member = $(member);
@@ -39,7 +42,7 @@ Promise.resolve()
 // Senate
 .then(() => request('http://www.senate.gov/general/contact_information/senators_cfm.xml'))
 .then(data => {
-    console.log(chalk.green('Senate'));
+    console.log(chalk.green('- Senate'));
     const senators = parseXML(data);
     senators.find('member').each((i, member) => {
         const $member = $(member);
@@ -61,12 +64,18 @@ Promise.resolve()
 
 // Saving
 .then(() => {
-    console.log(chalk.yellow('Saving'));
-    fs.writeFileSync(path.join(
+    const filepath = path.join(
         __dirname,
         'csv',
         'legislators.csv'
-    ), csv);
+    );
+    const existingCsv = fs.readFileSync(filepath, 'utf-8');
+    if (existingCsv === csv) {
+        console.log(chalk.yellow('The legislators.csv file was already up-to-date.'));
+    } else {
+        fs.writeFileSync(filepath, csv);
+        console.log(chalk.yellow('The legislators.csv file is now up-to-date!'));
+    }
 })
 .catch(console.error);
 
