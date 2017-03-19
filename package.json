@@ -3,9 +3,7 @@
     "node": "6.7.0"
   },
   "scripts": {
-    "legislators": "node create-legislators-csv.js",
-    "monitor": "nodemon create-zip-json-files.js",
-    "test": "mocha -w"
+    "start": "npm install --loglevel=error & node create-legislators-csv.js"
   },
   "dependencies": {
     "chalk": "^1.1.3",

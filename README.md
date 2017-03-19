@@ -1,7 +1,7 @@
 ```sh
-# Install dependencies
-npm install
+# Usage
+npm start
 
-# Create CSV
-node create-legislators-csv.js
+# After running the above command, the csv/legislators.csv file will be updated
+# with fresh data provided by Congress.
 ```
