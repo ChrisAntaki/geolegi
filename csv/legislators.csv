@@ -54,7 +54,6 @@ Rep,Brad,Sherman,D,CA,30,1,202-225-5911,S000344,
 Rep,Pete,Aguilar,D,CA,31,1,202-225-3201,A000371,
 Rep,Grace,Napolitano,D,CA,32,1,202-225-5256,N000179,
 Rep,Ted,Lieu,D,CA,33,1,202-225-3976,L000582,
-Rep,Xavier,Becerra,D,CA,34,1,202-225-6235,B000287,
 Rep,Norma,Torres,D,CA,35,1,202-225-6161,T000474,
 Rep,Raul,Ruiz,D,CA,36,1,202-225-5330,R000599,
 Rep,Karen,Bass,D,CA,37,1,202-225-7084,B001270,
@@ -120,7 +119,6 @@ Rep,Sanford,Bishop,D,GA,2,1,202-225-3631,B000490,
 Rep,A.,Ferguson,R,GA,3,1,202-225-5901,F000465,
 Rep,Henry,Johnson,D,GA,4,1,202-225-1605,J000288,
 Rep,John,Lewis,D,GA,5,1,202-225-3801,L000287,
-Rep,Tom,Price,R,GA,6,1,202-225-4501,P000591,
 Rep,Rob,Woodall,R,GA,7,1,202-225-4272,W000810,
 Rep,Austin,Scott,R,GA,8,1,202-225-6531,S001189,
 Rep,Doug,Collins,R,GA,9,1,202-225-9893,C001093,
@@ -168,7 +166,6 @@ Rep,Trey,Hollingsworth,R,IN,9,1,202-225-5315,H001074,
 Rep,Roger,Marshall,R,KS,1,1,202-225-2715,M001198,
 Rep,Lynn,Jenkins,R,KS,2,1,202-225-6601,J000290,
 Rep,Kevin,Yoder,R,KS,3,1,202-225-2865,Y000063,
-Rep,Mike,Pompeo,R,KS,4,1,202-225-6216,P000602,
 Rep,James,Comer,R,KY,1,1,202-225-3115,C001108,
 Rep,Brett,Guthrie,R,KY,2,1,202-225-3501,G000558,
 Rep,John,Yarmuth,D,KY,3,1,202-225-5401,Y000062,
@@ -235,7 +232,6 @@ Rep,Trent,Kelly,R,MS,1,1,202-225-4306,K000388,
 Rep,Bennie,Thompson,D,MS,2,1,202-225-5876,T000193,
 Rep,Gregg,Harper,R,MS,3,1,202-225-5031,H001045,
 Rep,Steven,Palazzo,R,MS,4,1,202-225-5772,P000601,
-Rep,Ryan,Zinke,R,MT,0,1,202-225-3211,Z000018,
 Rep,G.,Butterfield,D,NC,1,1,202-225-3101,B001251,
 Rep,George,Holding,R,NC,2,1,202-225-3032,H001065,
 Rep,Walter,Jones,R,NC,3,1,202-225-3415,J000255,
@@ -352,7 +348,6 @@ Rep,Mark,Sanford,R,SC,1,1,202-225-3176,S000051,
 Rep,Joe,Wilson,R,SC,2,1,202-225-2452,W000795,
 Rep,Jeff,Duncan,R,SC,3,1,202-225-5301,D000615,
 Rep,Trey,Gowdy,R,SC,4,1,202-225-6030,G000566,
-Rep,Mick,Mulvaney,R,SC,5,1,202-225-5501,M001182,
 Rep,James,Clyburn,D,SC,6,1,202-225-3315,C000537,
 Rep,Tom,Rice,R,SC,7,1,202-225-9895,R000597,
 Rep,Kristi,Noem,R,SD,0,1,202-225-2801,N000184,
@@ -420,7 +415,7 @@ Rep,Stacey,Plaskett,D,VI,0,1,202-225-1790,P000610,
 Rep,Peter,Welch,D,VT,0,1,202-225-4115,W000800,
 Rep,Suzan,DelBene,D,WA,1,1,202-225-6311,D000617,
 Rep,Rick,Larsen,D,WA,2,1,202-225-2605,L000560,
-Rep,Jaime,Beutler,R,WA,3,1,202-225-3536,H001056,
+Rep,Jaime,Herrera Beutler,R,WA,3,1,202-225-3536,H001056,
 Rep,Dan,Newhouse,R,WA,4,1,202-225-5816,N000189,
 Rep,Cathy,McMorris Rodgers,R,WA,5,1,202-225-2006,M001159,
 Rep,Derek,Kilmer,D,WA,6,1,202-225-5916,K000381,
@@ -523,10 +518,10 @@ Sen,Ben,Sasse,R,NE,Class II,1,202-224-4224,S001197,Class II
 Sen,Brian,Schatz,D,HI,Class III,1,202-224-3934,S001194,Class III
 Sen,Charles E.,Schumer,D,NY,Class III,1,202-224-6542,S000148,Class III
 Sen,Tim,Scott,R,SC,Class III,1,202-224-6121,S001184,Class III
-Sen,Jeff,Sessions,R,AL,Class II,1,202-224-4124,S001141,Class II
 Sen,Jeanne,Shaheen,D,NH,Class II,1,202-224-2841,S001181,Class II
 Sen,Richard C.,Shelby,R,AL,Class III,1,202-224-5744,S000320,Class III
 Sen,Debbie,Stabenow,D,MI,Class I,1,202-224-4822,S000770,Class I
+Sen,Luther,Strange,R,AL,Class II,1,202-224-4124,S001202,Class II
 Sen,Dan,Sullivan,R,AK,Class II,1,202-224-3004,S001198,Class II
 Sen,Jon,Tester,D,MT,Class I,1,202-224-2644,T000464,Class I
 Sen,John,Thune,R,SD,Class III,1,202-224-2321,T000250,Class III
